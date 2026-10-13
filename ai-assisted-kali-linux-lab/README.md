@@ -77,3 +77,12 @@ Conclusion
 This project helped me explore AI-assisted cybersecurity while developing practical experience with Linux, virtualization, authentication, and network reconnaissance.
 
 I’m continuing to build hands-on projects as I develop my cybersecurity and cloud security skills.
+
+## Screenshots
+
+### 1. Kali Linux Lab with AI Assistant
+![Kali Linux AI Lab](./screenshots/WhatsApp%20Image%202026-10-13%20at%2013.03.33.jpeg)
+
+### 2. VMware Workstation Setup
+<!-- When you add more screenshots, add them here like this: -->
+<!-- ![Setup](./screenshots/your-second-image-name.jpeg) -->
