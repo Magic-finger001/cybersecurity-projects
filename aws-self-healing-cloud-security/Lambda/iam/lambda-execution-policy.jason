@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "BlockPublicAccessOnTestBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutBucketPublicAccessBlock"
+      ],
+      "Resource": "arn:aws:s3:::YOUR-TEST-BUCKET-NAME"
+    },
+    {
+      "Sid": "DeleteTestBucketPolicy",
+      "Effect": "Allow",
+      "Action": [
+        "s3:DeleteBucketPolicy"
+      ],
+      "Resource": "arn:aws:s3:::YOUR-TEST-BUCKET-NAME"
+    },
+    {
+      "Sid": "PublishSecurityAlerts",
+      "Effect": "Allow",
+      "Action": [
+        "sns:Publish"
+      ],
+      "Resource": "YOUR-SNS-TOPIC-ARN"
+    }
+  ]
+}
