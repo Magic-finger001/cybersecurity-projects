@@ -231,7 +231,28 @@ This project was developed for educational and portfolio purposes in a controlle
 
 The test intentionally introduces a security misconfiguration. Do not reproduce it on production resources or buckets containing sensitive information.
 
-Automated remediation can affect application availability and legitimate access. Review and test all security actions before using them in a production environment.
+Automated remediation can affect application availability and legitimate access. Review and test all security actions before using them in a production environmentIAM Permissions and Least-Privilege Design
+
+The automated remediation function uses an IAM execution role to interact with AWS services.
+
+The role needs permission to apply S3 Block Public Access settings, perform the configured bucket-policy remediation, publish security notifications through Amazon SNS, and write execution logs to CloudWatch Logs.
+
+Permission Design
+
+* Amazon S3: Allows the function to apply public-access restrictions to the intended test bucket.
+* Amazon SNS: Allows the function to publish security alerts to the configured notification topic.
+* Amazon CloudWatch Logs: Allows the function to record execution activity for troubleshooting and investigation.
+
+Security Considerations
+
+The execution role should follow the principle of least privilege by granting only the permissions required for the function’s intended responsibilities.
+
+Resource-level restrictions should be applied wherever supported. The function should also validate incoming events before making security-sensitive changes.
+
+The IAM policy published in this repository is intended to document the project’s permission design. It should be checked against the actual deployed role before being treated as an exact representation of the AWS environment.
+
+For production use, permissions and remediation behavior should undergo additional security review and testing.
+
 
 Author
 
